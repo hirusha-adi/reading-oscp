@@ -98,6 +98,70 @@ back
 show
 ```
 
-### oss
+### gitleaks
 
-- check for github repos for client secrets / api keys / access tokens
+- check for git repos for client secrets / api keys / access tokens
+- for git repos, use [gitleaks](https://github.com/gitleaks/gitleaks)
+
+- either `git clone` and run `gitleaks -v`
+- or
+
+```bash
+gitleaks -v -r=https://github.com/user/repo.git
+```
+
+### shodan
+
+- https://www.shodan.io/
+- crawls for servers and iot devices
+- lists the ones that are insecure / misconfigured
+- will show running services and vulns in them, if any
+- make an account and log in
+
+- to search for domain
+
+```bash
+hostname:megacorpone.com:
+```
+
+### other cool scanners
+
+- security headers
+  - https://securityheaders.com/
+  - http headers
+  - can get a rough idea of how hardened the server actually is
+- ssl server tests
+  - https://www.ssllabs.com/ssltest/
+  - to identify some SSL/TLS related vulnerabilities, such as [Poodle](https://en.wikipedia.org/wiki/POODLE) or [Heartbleed](https://en.wikipedia.org/wiki/Heartbleed).
+- search for pastes
+  - eg: https://pastebin.com
+- user info gathering
+  - of employees
+  - check previous data leaks
+  - bruteforce with password lists?
+- stack overflow
+  - to see questions asked by employees
+  - to be able to guess how stuff works
+- social searcher
+  - https://www.social-searcher.com
+  - limited searchching for free users
+  - to find reviews and stuff
+- Twofi
+  - need logged in user's valid API key to use
+  - twitter OSINT
+- OSINT framework
+  - https://osintframework.com/
+  - has all sorts of tools we can use on many services
+- Maltego Community Edition
+  - helps both do osint / recon
+  - and visualize everything
+
+### email harvesting
+
+- search for email addresses of a domain in google
+- `-b google` to specify the data source
+- what comes after `-d` is the domain
+
+```bash
+theharvester -d megacorpone.com -b google
+```
