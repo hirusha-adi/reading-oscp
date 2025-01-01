@@ -203,3 +203,5 @@ dnsrecon -d megacorpone.com -D ~/list.txt -t brt
 ```bash
 dnsenum example.com
 ```
+
+## Port Scanning
